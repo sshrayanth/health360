@@ -1,0 +1,18 @@
+name: 'health360_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'health360'
+
+model-paths: ["models"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+
+models:
+  health360_dbt:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

@@ -1,0 +1,25 @@
+# dbt credentials
+health360_dbt/profiles.yml
+
+# Python
+__pycache__/
+*.py[cod]
+
+# dbt generated files
+health360_dbt/target/
+health360_dbt/dbt_packages/
+health360_dbt/logs/
+
+# Environment files
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# dbt local user settings
+health360_dbt/.user.yml
