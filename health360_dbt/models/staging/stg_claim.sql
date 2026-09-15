@@ -1,0 +1,12 @@
+{{ config(materialized='view') }}
+
+SELECT
+    TRIM(CLAIM_ID) AS CLAIM_ID,
+    TRIM(ENCOUNTER_ID) AS ENCOUNTER_ID,
+    BILLED_AMOUNT,
+    ALLOWED_AMOUNT,
+    PAID_AMOUNT,
+    TRIM(PAYER) AS PAYER,
+    TRIM(CLAIM_STATUS) AS CLAIM_STATUS,
+    CLAIM_DATE
+FROM {{ source('raw', 'CLAIMS') }}

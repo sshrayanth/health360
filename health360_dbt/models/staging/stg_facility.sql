@@ -1,0 +1,9 @@
+{{ config(materialized='view') }}
+
+SELECT
+    FACILITY_ID,
+    TRIM(FACILITY_NAME) AS FACILITY_NAME,
+    TRIM(ADDRESS) AS ADDRESS,
+    TRIM(CITY) AS CITY,
+    TRIM(STATE) AS STATE
+FROM {{ source('raw', 'FACILITIES') }}
